@@ -1,0 +1,12 @@
+-- BLOQUE DE TOTALES
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+-- ENTIDAD
+entity totales is
+	port (precio, cantidad: in std_logic_vector (5 downto 0);
+			calcular: in std_logic;
+			pago_t: out std_logic_vector (9 downto 0);
+			produc_t: out std_logic_vector (6 downto 0);
+			produc_r: out std_logic_vector (5 downto 0));
+end totales;

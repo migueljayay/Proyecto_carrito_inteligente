@@ -1,0 +1,8 @@
+--CONTADOR DE 6 SEGUNDOS
+library ieee;
+use ieee.std_logic_1164.all;
+-- ENTIDAD
+entity seis_seg is
+	port(en, clk_1hz, reset: in std_logic;
+							seis: out std_logic);
+end seis_seg;

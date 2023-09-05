@@ -1,0 +1,11 @@
+-- CIRCUITO INCREMENTADOR Y REDUCTOR EN 1
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned;
+-- ENTIDAD
+entity sum_rest is
+	port(cantidad: in std_logic_vector (3 downto 0);
+		  up_down: in std_logic;
+		  q: out std_logic_vector (3 downto 0);
+		  vacio: out std_logic);
+end sum_rest;

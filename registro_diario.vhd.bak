@@ -1,0 +1,12 @@
+-- CODIGO PARA REGISTRO DIARIO
+library ieee;
+use ieee.std_logic_1164.all;
+-- ENTIDAD
+entity registro_diario is
+port (pago_total: in std_logic_vector(9 downto 0);
+			reset,clk: in std_logic;
+			recaudo: out std_logic_vector(11 downto 0);
+			compras: out std_logic_vector(6 downto 0));
+end registro_diario;
+-- ARQUITECTURA
+architecture funcion of registro_diario is

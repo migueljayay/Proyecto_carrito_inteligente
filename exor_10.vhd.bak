@@ -1,0 +1,23 @@
+-- VALIDACION DE INGRESO DE NUMERO
+library ieee;
+use ieee.std_logic_1164.all;
+-- ENTIDAD
+entity exor_10 is
+ port(teclado: in std_logic_vector (9 downto 0);
+		num: out integer range 0 to 15);
+end exor_10;
+-- ARQUITECTURA
+architecture funcion of exor_10 is
+begin
+	with teclado select
+		digito<= 1 when "000000001",
+				   2 when "000000010",
+					3 when "000000100",
+					4 when "000001000",
+					5 when "000010000",
+					6 when "000100000",
+					7 when "001000000",
+					8 when "010000000",
+					9 when "100000000",
+					0 when others;
+end funcion;

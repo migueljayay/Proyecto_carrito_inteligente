@@ -1,0 +1,44 @@
+library ieee;
+use ieee.std_logic_1164.all;
+--ENTIDAD
+Entity controlador is
+	Port(
+		 Resetn, Clock, START, BOTON, GANO  :	in std_logic;
+ 		 SELECC, ENCENDER, GUARDAR, ACUM, CJU  : out std_logic);
+end controlador;
+
+Architecture control of controlador is
+	Type State is (Ta, Tb, Tc, Td, Te, Tf, Tg);
+	Signal y : State;
+Begin
+	Process(Resetn, Clock)
+	Begin
+		If Resetn = '0' then y <= Ta;
+		elsif Clock'event and Clock = '1' then
+			case y is
+				when Ta => IF START='1' THEN y <= Tb; else y <= Ta; end if;				
+				when Tb => If BOTON = '1' then y <= Tc; else  y <= Tb; end if;	
+				when Tc => y<=Td;
+				when Td => y<=Te;	
+				when Te => If GANO= '0' then y <= Tf; ELSE y<=Tg; end if;
+  				when Tf => y <= Tb; 		
+				when Tg => 
+				when others => y <= Ta;				
+			end case;
+		end if;
+	end Process;
+
+SELECC<='1' WHEN y=Ta else '0';
+ENCENDER<='0' WHEN y=Ta else '1';
+GUARDAR<='1' WHEN y=Tc else '0';
+ACUM<='1' WHEN y=Td else '0';
+CJU<='1' WHEN y=Tf else '0';	
+  
+End Control;
+
+
+
+
+
+
+

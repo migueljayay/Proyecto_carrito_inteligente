@@ -1,0 +1,8 @@
+-- FF ESTADO DE PAGO O REGISTRO
+library ieee;
+use ieee.std_logic_1164.all;
+-- ENTIDAD
+entity ff_2 is
+	port(a,b,clk, reset: in std_logic;
+			 q1, q2: out std_logic);
+end ff_2;

@@ -1,0 +1,11 @@
+-- MEMORIA RAM 64X8
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+-- ENTIDAD
+entity ram64x8 is
+	port(dato: in std_logic_vector (7 downto 0);
+		  direccion: in std_logic_vector (6 downto 0);
+		  clk, wr: in std_logic;
+		  q: out std_logic_vector (7 downto 0));
+end ram64x8;
